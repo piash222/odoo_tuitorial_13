@@ -1,5 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
+    
+    <record id="patient_view_form" model="ir.ui.view">
+        <field name="name">patient.view.form</field>
+        <field name="model">hospital.patient</field>
+        <field name="arch" type="xml">
+            <form string="Patients Form">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="patient_name"/>
+                            <field name="patient_age"/>
+                        </group>
+                        <group>
+                            <field name="notes"/>
+                            <field name="image"/>
+                        </group>
+                    </group>
+                </sheet>
+
+
+            </form>
+        </field>
+    </record>
+
+    <record id="patient_view_tree" model="ir.ui.view">
+        <field name="name">patient.view.tree</field>
+        <field name="model">hospital.patient</field>
+        <field name="arch" type="xml">
+            <tree string="patient tree">
+                <field name="patient_name"/>
+                <field name="patient_age"/>
+                <field name="notes"/>
+            </tree>
+        </field>
+    </record>
 
     <record id="patient_action" model="ir.actions.act_window">
         <field name="name">Patients</field>

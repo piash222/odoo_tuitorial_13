@@ -16,4 +16,4 @@ class HospitalPatient (models.Model):
     notes = fields.Text(
         string="Notes",
         required=False)
-    Image = fields.Binary(string="Image")
+    image = fields.Binary(string="Image")
