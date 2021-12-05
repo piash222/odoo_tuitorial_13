@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="patient_action" model="ir.actions.act_window">
+        <field name="name">Patients</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">hospital.patient</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_neutral_face">
+                Create your first patient
+            </p>
+        </field>
+    </record>
+
+    <!-- This Menu Item will appear in the Upper bar, That's why It needs NO parent or action -->
+    <menuitem id="hospital_root" name="Hospital" sequence="2" web_icon="om_hospital,static/description/icon.png"/>
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="hospital_patient" name="Patients" parent="hospital_root" action="patient_action" sequence="1"/>
+</odoo>
