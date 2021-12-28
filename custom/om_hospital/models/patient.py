@@ -4,6 +4,7 @@ from odoo import fields, models, api
 class HospitalPatient (models.Model):
     _name = 'hospital.patient'
     _description = 'Patient records'
+    _rec_name = 'patient_name'
 
     patient_name = fields.Char(
         string="Name",
@@ -17,3 +18,4 @@ class HospitalPatient (models.Model):
         string="Notes",
         required=False)
     image = fields.Binary(string="Image")
+    name = fields.Char(string='Test')
