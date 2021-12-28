@@ -12,7 +12,9 @@
 
     ],
     'data': [
-        'views/patient.xml'
+        'security/ir.model.access.csv',
+        'views/patient.xml',
+
     ],
     'demo': [
 
