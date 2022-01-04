@@ -28,12 +28,19 @@ class HospitalPatient(models.Model):
         required=False)
     image = fields.Binary(string="Image")
     name = fields.Char(string='Test')
-    name_seq = fields.Char(string='',
+    name_seq = fields.Char(string='name sequence',
                            required=True,
                            copy=False,
                            readonly=True,
                            index=True,
                            default=lambda self: _('New'))
+
+    patient_gender = fields.Selection(
+        string='Patient Gender',
+        selection=[('male', 'Male'),
+                   ('fe_male', 'Female'), ],
+        required=False)
+
 
     @api.model
     def create(self, values):
