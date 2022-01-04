@@ -1,7 +1,7 @@
-from odoo import fields, models, api
+from odoo import fields, models, api, _
 
 
-class HospitalPatient (models.Model):
+class HospitalPatient(models.Model):
     _name = 'hospital.patient'
     _inherit = ['mail.thread', 'mail.activity.mixin']
     _description = 'Patient records'
@@ -20,3 +20,15 @@ class HospitalPatient (models.Model):
         required=False)
     image = fields.Binary(string="Image")
     name = fields.Char(string='Test')
+    name_seq = fields.Char(string='',
+                           required=True,
+                           copy=False,
+                           readonly=True,
+                           index=True,
+                           default=lambda self: _('New'))
+
+    @api.model
+    def create(self, values):
+        if values.get('name_seq', _('New')) == _('New'):
+            values['name_seq'] = self.env['ir.sequence'].next_by_code('hospital.patient.seq') or _('New')
+        return super(HospitalPatient, self).create(values)
