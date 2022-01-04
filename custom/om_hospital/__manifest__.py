@@ -9,7 +9,8 @@
     'website': 'Website',
     'license': 'LGPL-3',
     'depends': [
-        'mail'
+        'mail',
+        'sale',
     ],
     'data': [
         'security/ir.model.access.csv',

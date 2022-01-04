@@ -1,6 +1,14 @@
 from odoo import fields, models, api, _
 
 
+class SaleOrderInherit(models.Model):
+    _inherit = 'sale.order'
+
+    patient_name = fields.Char(
+        string='Patient Name',
+        required=False)
+
+
 class HospitalPatient(models.Model):
     _name = 'hospital.patient'
     _inherit = ['mail.thread', 'mail.activity.mixin']
