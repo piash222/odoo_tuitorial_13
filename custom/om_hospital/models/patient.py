@@ -17,11 +17,13 @@ class HospitalPatient(models.Model):
 
     patient_name = fields.Char(
         string="Name",
+        tracking=True,
         required=True)
 
     patient_age = fields.Integer(
         string='Age',
-        required=False)
+        tracking=True,
+        required=False,)
 
     notes = fields.Text(
         string="Notes",

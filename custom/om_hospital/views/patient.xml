@@ -21,6 +21,7 @@
         <field name="arch" type="xml">
             <form string="Patients Form">
                 <sheet>
+                    <field name="image" widget="image" class="oe_avatar"/>
                     <div class="oe_title">
                         <h1>
                             <field name="name_seq" placeholder="......"/>
@@ -30,11 +31,11 @@
                         <group>
                             <field name="patient_name"/>
                             <field name="name"/>
-                            <field name="patient_age" widget="char"/>
+                            <field name="patient_age"/>
                         </group>
                         <group>
                             <field name="patient_gender"/>
-                            <field name="image"/>
+
                             <field name="age_group"/>
                         </group>
 
