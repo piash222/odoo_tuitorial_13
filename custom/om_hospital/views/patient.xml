@@ -30,14 +30,20 @@
                         <group>
                             <field name="patient_name"/>
                             <field name="name"/>
-                            <field name="patient_age"/>
+                            <field name="patient_age" widget="char"/>
                         </group>
                         <group>
                             <field name="patient_gender"/>
-                            <field name="notes"/>
                             <field name="image"/>
+                            <field name="age_group"/>
                         </group>
+
+
                     </group>
+                    <group>
+                        <field name="notes"/>
+                    </group>
+
                 </sheet>
                 <div class="oe_chatter">
                     <field name="message_follower_ids" widget="mail_followers"/>
@@ -59,7 +65,7 @@
                 <field name="patient_name"/>
                 <field name="patient_age"/>
                 <field name="patient_gender"/>
-                <field name="notes"/>
+                <field name="age_group"/>
             </tree>
         </field>
     </record>
@@ -69,7 +75,8 @@
         <field name="model">hospital.patient</field>
         <field name="arch" type="xml">
             <search string="patient search">
-                <field name="patient_name" string="name" filter_domain="['|', ('patient_name', 'ilike', self), ('name_seq', 'ilike', self)]"/>
+                <field name="patient_name" string="name"
+                       filter_domain="['|', ('patient_name', 'ilike', self), ('name_seq', 'ilike', self)]"/>
                 <field name="name_seq"/>
                 <separator/>
                 <filter string="male" name="male" domain="[('patient_gender','=', 'male')]"/>
@@ -81,7 +88,7 @@
             </search>
         </field>
     </record>
-    
+
 
     <record id="patient_action" model="ir.actions.act_window">
         <field name="name">Patients</field>
