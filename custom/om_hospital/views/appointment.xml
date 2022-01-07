@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="appointment_form_view" model="ir.ui.view">
+            <field name="name">hospital.appointment.form</field>
+            <field name="model">hospital.appointment</field>
+            <field name="arch" type="xml">
+                <form string="Appointment">
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="name"/>
+                            <h1>
+                                <field name="name"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="patient_id"/>
+                                <field name="patient_age"/>
+                            </group>
+                            <group>
+                                <field name="appointment_date"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="appointment_tree_view" model="ir.ui.view">
+            <field name="name">hospital.appointment.tree</field>
+            <field name="model">hospital.appointment</field>
+            <field name="arch" type="xml">
+                <tree string="appointment">
+                    <field name="name"/>
+                    <field name="patient_id"/>
+                    <field name="patient_age"/>
+                    <field name="appointment_date"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="appointment_act_window" model="ir.actions.act_window">
+            <field name="name">Appointment</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">hospital.appointment</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_img_link">
+                    There is no examples click here to add new Appointment.
+                </p>
+            </field>
+        </record>
+
+        <menuitem name="appointment" id="appointment_menu" parent="hospital_root" action="appointment_act_window"/>
+
+    </data>
+</odoo>
