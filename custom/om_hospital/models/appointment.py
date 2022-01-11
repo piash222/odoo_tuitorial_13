@@ -20,10 +20,15 @@ class HospitalAppointment(models.Model):
         readonly=True,
         index=True,
         default=lambda self: _('New'))
+
+    def _get_default_patient(self):
+        return 1
+
     patient_id = fields.Many2one(
         comodel_name='hospital.patient',
         string='Patient',
-        required=True)
+        required=True,
+        default=_get_default_patient)
     patient_age = fields.Integer(
         string='Age',
         related='patient_id.patient_age',
@@ -32,3 +37,10 @@ class HospitalAppointment(models.Model):
         string='Appointment Date',
         required=True)
 
+    def _get_default_note(self):
+        return "Subscribe"
+
+    notes = fields.Text(
+        string="Registration Note",
+        required=False,
+        default=_get_default_note)
