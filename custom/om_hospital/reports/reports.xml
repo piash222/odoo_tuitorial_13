@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <report
+                id="report_patient"
+                model="hospital.patient"
+                string="Patient Card"
+                name="om_hospital.report_patient_view"
+                file="patient card"
+                report_type="qweb-pdf"/>
+
+        <template id="report_patient_view">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="doc">
+                    <t t-call="web.external_layout">
+                        <div class="page">
+                            <h1>Patient Card</h1>
+                            <p>Patient Name: <t t-esc="doc.patient_name"/></p>
+                            <p>Patient Age: <t t-esc="doc.patient_age"/></p>
+                            <p>Gender: <t t-esc="doc.patient_gender"/></p>
+
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+
+    </data>
+</odoo>
