@@ -44,3 +44,11 @@ class HospitalAppointment(models.Model):
         string="Registration Note",
         required=False,
         default=_get_default_note)
+
+    state = fields.Selection(
+        string='State',
+        selection=[('draft', 'Draft'),
+                   ('confirm', 'Confirm'),
+                   ('done', 'Done'),
+                   ('cancel', 'Cancel')],
+        default='draft')
