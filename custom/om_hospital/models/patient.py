@@ -30,7 +30,7 @@ class HospitalPatient(models.Model):
     patient_age = fields.Integer(
         string='Age',
         tracking=True,
-        required=False,)
+        required=False, )
 
     notes = fields.Text(
         string="Notes",
@@ -64,7 +64,22 @@ class HospitalPatient(models.Model):
                    ('minor', 'Minor'), ],
         required=False, compute='set_age_group')
 
+    appointment_count = fields.Integer(
+        string='Appointment count',
+        compute='_get_appointment_count')
 
+    def _get_appointment_count(self):
+        self.appointment_count =  self.env['hospital.appointment'].search_count([('patient_id', '=', self.id)])
+
+    def patient_appointment(self):
+        return {
+            'name': _('appointments'),
+            'res_model': 'hospital.appointment',
+            'view_mode': 'tree,form',
+            'domain': [("patient_id", '=', self.id)],
+            'type': 'ir.actions.act_window'
+
+        }
 
     @api.model
     def create(self, values):
