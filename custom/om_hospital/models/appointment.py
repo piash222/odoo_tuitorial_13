@@ -52,3 +52,15 @@ class HospitalAppointment(models.Model):
                    ('done', 'Done'),
                    ('cancel', 'Cancel')],
         default='draft')
+
+    def action_confirm(self):
+        for rec in self:
+            rec.state = 'confirm'
+
+    def action_done(self):
+        for rec in self:
+            rec.state = 'done'
+
+    def action_cancel(self):
+        for rec in self:
+            rec.state = 'cancel'
