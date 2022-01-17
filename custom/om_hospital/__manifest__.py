@@ -15,6 +15,7 @@
     'data': [
         'security/ir.model.access.csv',
         'data/patient_seq.xml',
+        'data/data.xml',
         'views/patient.xml',
         'views/appointment.xml',
         'reports/reports.xml',

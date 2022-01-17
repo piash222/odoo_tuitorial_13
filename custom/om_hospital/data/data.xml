@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="patient_xyz" model="hospital.patient">
+            <field name="patient_name">XYZ</field>
+            <field name="patient_age">22</field>
+            <field name="patient_gender">fe_male</field>
+            <field name="notes">Data file</field>
+        </record>
+
+
+        <record id="appointment_xyz" model="hospital.appointment">
+            <field name="patient_id" ref="om_hospital.patient_xyz"/>
+            <field name="appointment_date">2022-01-20</field>
+        </record>
+
+    </data>
+</odoo>
