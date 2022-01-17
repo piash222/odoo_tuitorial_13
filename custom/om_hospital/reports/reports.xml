@@ -8,6 +8,7 @@
                 string="Patient Card"
                 name="om_hospital.report_patient_view"
                 file="patient card"
+                menu="False"
                 report_type="qweb-pdf"/>
 
         <template id="report_patient_view">
