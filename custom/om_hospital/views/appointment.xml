@@ -7,12 +7,15 @@
             <field name="model">hospital.appointment</field>
             <field name="arch" type="xml">
                 <form string="Appointment">
-<!--                  normally state is added before the sheet tag-->
+                    <!--                  normally state is added before the sheet tag-->
                     <header>
-                        <button name="action_confirm" type="object" string="Confirm" states="draft" class="oe_highlight"/>
+                        <button name="action_confirm" type="object" string="Confirm" states="draft"
+                                class="oe_highlight"/>
                         <button name="action_done" type="object" string="Done" states="confirm" class="oe_highlight"/>
-                        <button name="action_cancel" type="object" string="Cancel" states="draft,confirm" class="oe_highlight"/>
-                        <field name="state" widget="statusbar" statusbar_visible="draft,confirm,done" statusbar_colors="{'draft':'yellow'}"/>
+                        <button name="action_cancel" type="object" string="Cancel" states="draft,confirm"
+                                class="oe_highlight"/>
+                        <field name="state" widget="statusbar" statusbar_visible="draft,confirm,done"
+                               statusbar_colors="{'draft':'yellow'}"/>
                     </header>
                     <sheet>
                         <div class="oe_title">

@@ -25,7 +25,8 @@
                                                          t-att-src="'/web/static/src/img/placeholder.png'" height="120"
                                                          border="1" width="120"/>
                                                     <img t-else=""
-                                                         t-att-src="'data:image/png;base64,%s' % to_text(doc.image)" height="120"
+                                                         t-att-src="'data:image/png;base64,%s' % to_text(doc.image)"
+                                                         height="120"
                                                          border="1" width="120"/>
                                                 </p>
                                                 <p style="text-align:center">
@@ -42,9 +43,12 @@
                                                         <p style="text-align:right"><strong>Ph No:</strong></p>
                                                     </td>
                                                     <td>
-                                                        <p style="text-align:right; padding-left:10px;"><strong t-field="doc.patient_name"></strong></p>
-                                                        <p style="text-align:right; padding-left:10px;"><strong t-field="doc.patient_age"></strong></p>
-                                                        <p style="text-align:right; padding-left:10px;"><strong t-field="doc.age_group"/></p>
+                                                        <p style="text-align:right; padding-left:10px;"><strong
+                                                                t-field="doc.patient_name"></strong></p>
+                                                        <p style="text-align:right; padding-left:10px;"><strong
+                                                                t-field="doc.patient_age"></strong></p>
+                                                        <p style="text-align:right; padding-left:10px;"><strong
+                                                                t-field="doc.age_group"/></p>
                                                     </td>
                                                 </tr></table>
 
