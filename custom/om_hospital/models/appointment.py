@@ -64,3 +64,10 @@ class HospitalAppointment(models.Model):
     def action_cancel(self):
         for rec in self:
             rec.state = 'cancel'
+
+    doctor_note = fields.Char(
+        string='Doctor Note',
+        required=False)
+    pharmacy_note = fields.Char(
+        string='Pharmacy Note',
+        required=False)

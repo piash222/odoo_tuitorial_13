@@ -36,6 +36,16 @@
                         <group>
                             <field name="notes"/>
                         </group>
+                        <notebook>
+                            <page name="Prescription" string="Doctor Prescription">
+                                <group>
+                                    <field name="doctor_note"/>
+                                </group>
+                            </page>
+                            <page name="Medicine" string="Pharmacy">
+                                <field name="pharmacy_note"/>
+                            </page>
+                        </notebook>
                     </sheet>
                 </form>
             </field>
