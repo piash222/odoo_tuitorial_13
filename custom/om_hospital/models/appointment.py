@@ -71,3 +71,7 @@ class HospitalAppointment(models.Model):
     pharmacy_note = fields.Char(
         string='Pharmacy Note',
         required=False)
+    active = fields.Boolean(
+        string='Active',
+        related='patient_id.active',
+        required=False)

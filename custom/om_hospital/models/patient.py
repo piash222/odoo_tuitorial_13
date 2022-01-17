@@ -97,3 +97,7 @@ class HospitalPatient(models.Model):
         if values.get('name_seq', _('New')) == _('New'):
             values['name_seq'] = self.env['ir.sequence'].next_by_code('hospital.patient.seq') or _('New')
         return super(HospitalPatient, self).create(values)
+
+    active = fields.Boolean(
+        string='Active',
+        default=True)
