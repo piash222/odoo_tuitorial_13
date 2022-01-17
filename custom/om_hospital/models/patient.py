@@ -10,6 +10,17 @@ class SaleOrderInherit(models.Model):
         required=False)
 
 
+# overwrite the create method
+class ResPartner(models.Model):
+    _inherit = 'res.partner'
+
+    @api.model
+    def create(self, values):
+        # Add code here
+        print("Yes working")
+        return super(ResPartner, self).create(values)
+
+
 class HospitalPatient(models.Model):
     _name = 'hospital.patient'
     _inherit = ['mail.thread', 'mail.activity.mixin']
