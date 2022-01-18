@@ -18,6 +18,7 @@
         'data/data.xml',
         'views/patient.xml',
         'views/appointment.xml',
+        'views/doctors.xml',
         'reports/reports.xml',
     ],
     'demo': [

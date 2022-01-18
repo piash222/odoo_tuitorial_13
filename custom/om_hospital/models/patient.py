@@ -101,3 +101,7 @@ class HospitalPatient(models.Model):
     active = fields.Boolean(
         string='Active',
         default=True)
+    doctor = fields.Many2one(
+        comodel_name='hospital.doctor',
+        string='Doctor',
+        required=False)
