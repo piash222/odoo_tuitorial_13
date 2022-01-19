@@ -75,3 +75,25 @@ class HospitalAppointment(models.Model):
         string='Active',
         related='patient_id.active',
         required=False)
+    appointment_lines = fields.One2many(
+        comodel_name='hospital.appointment.lines',
+        inverse_name='appointment_id',
+        string='Appointment_lines',
+        required=False)
+
+
+class HospitalAppointmentLines(models.Model):
+    _name = 'hospital.appointment.lines'
+    _description = 'Appointment Lines'
+
+    product_id = fields.Many2one(
+        comodel_name='product.product',
+        string='Product',
+        required=False)
+    product_qty = fields.Integer(
+        string='Quantity',
+        required=False)
+    appointment_id = fields.Many2one(
+        comodel_name='hospital.appointment',
+        string='Appointment Id',
+        required=False)
