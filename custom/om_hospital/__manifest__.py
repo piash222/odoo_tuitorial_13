@@ -20,6 +20,7 @@
         'views/patient.xml',
         'views/appointment.xml',
         'views/doctors.xml',
+        'wizards/create_appointment.xml',
         'reports/reports.xml',
     ],
     'demo': [
