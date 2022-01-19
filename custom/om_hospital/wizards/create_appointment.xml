@@ -19,10 +19,13 @@
         </field>
     </record>
     <record id="create_appointment_wizard_action" model="ir.actions.act_window">
-        <field name="name">create_appointment_wizard_action</field>
+        <field name="name">create appointment</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">create.appointment</field>
         <field name="view_mode">form</field>
         <field name="target">new</field>
     </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="create_appointment_menu" name="Create Appointment" parent="hospital_root" action="create_appointment_wizard_action" sequence="100"/>
 </odoo>
