@@ -61,7 +61,7 @@
                         <group>
                             <field name="patient_gender"/>
                             <field name="age_group"/>
-                            <field name="doctor"/>
+                            <field name="doctor" options="{'no_create_edit': True, 'no_create': True, 'no_open': True}"/>
                         </group>
 
 
