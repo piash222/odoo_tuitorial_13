@@ -27,6 +27,12 @@ class HospitalPatient(models.Model):
     _description = 'Patient records'
     _rec_name = 'patient_name'
 
+    def name_get(self):
+        res = []
+        for field in self:
+            res.append((field.id, '%s - %s' % (field.name_seq, field.patient_name)))
+        return res
+
     patient_name = fields.Char(
         string="Name",
         tracking=True,
