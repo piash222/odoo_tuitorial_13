@@ -30,7 +30,8 @@
         <field name="arch" type="xml">
             <form string="Patients Form">
                 <header>
-                    <button name="%(om_hospital.create_appointment_wizard_action)d" string="Create Appointment" class="oe_highlight" type="action"/>
+                    <button name="%(om_hospital.create_appointment_wizard_action)d" string="Create Appointment"
+                            class="oe_highlight" type="action" context="{'default_patient_id': active_id}"/>
                 </header>
                 <sheet>
                     <div class="oe_button_box" name="expense_button_box">
