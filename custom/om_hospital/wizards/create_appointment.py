@@ -13,4 +13,9 @@ class CreateAppointment(models.TransientModel):
         required=True)
 
     def create_appointment(self):
-        pass
+
+        vals = {
+            'patient_id':self.patient_id.id,
+            'appointment_date': self.appointment_date
+        }
+        self.env['hospital.appointment'].create(vals)
