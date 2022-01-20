@@ -105,3 +105,13 @@ class HospitalPatient(models.Model):
         comodel_name='hospital.doctor',
         string='Doctor',
         required=False)
+    doctor_gender = fields.Selection(
+        string='Doctor Gender',
+        selection=[('male', 'Male'),
+                   ('fe_male', 'Female'), ],
+        required=False, )
+
+    @api.onchange('doctor')
+    def set_doctor_gender(self):
+        for rec in self:
+            self.doctor_gender = self.doctor.doctor_gender
