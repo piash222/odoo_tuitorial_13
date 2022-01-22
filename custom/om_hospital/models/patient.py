@@ -121,3 +121,12 @@ class HospitalPatient(models.Model):
     def set_doctor_gender(self):
         for rec in self:
             self.doctor_gender = self.doctor.doctor_gender
+            
+    email = fields.Char(
+        string='Email',
+        required=False)
+
+    pro = fields.Many2one(
+        comodel_name='res.users',
+        string='PRO',
+        required=False)

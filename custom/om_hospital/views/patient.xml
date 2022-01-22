@@ -62,12 +62,14 @@
                             <field name="patient_name"/>
                             <field name="name"/>
                             <field name="patient_age"/>
+                            <field name="email"/>
                         </group>
                         <group>
                             <field name="patient_gender"/>
                             <field name="age_group"/>
                             <field name="doctor" options="{'no_create_edit': True, 'no_create': True, 'no_open': True}"/>
                             <field name="doctor_gender"/>
+                            <field name="pro"/>
                         </group>
 
 
