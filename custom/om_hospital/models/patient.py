@@ -121,7 +121,7 @@ class HospitalPatient(models.Model):
     def set_doctor_gender(self):
         for rec in self:
             self.doctor_gender = self.doctor.doctor_gender
-            
+
     email = fields.Char(
         string='Email',
         required=False)
@@ -130,3 +130,7 @@ class HospitalPatient(models.Model):
         comodel_name='res.users',
         string='PRO',
         required=False)
+
+    def action_send_card(self):
+        template = self.env.ref("om_hospital.email_template_patient_hospital")
+        template.send_mail(self.id, force_send=True)
