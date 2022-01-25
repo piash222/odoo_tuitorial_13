@@ -11,6 +11,7 @@
     'depends': [
         'mail',
         'sale',
+        'report_xlsx',
     ],
     'data': [
         'security/ir.model.access.csv',
