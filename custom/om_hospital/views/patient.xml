@@ -33,7 +33,8 @@
                 <header>
                     <button name="%(om_hospital.create_appointment_wizard_action)d" string="Create Appointment"
                             class="oe_highlight" type="action" context="{'default_patient_id': active_id}"/>
-                    <button name="action_send_card" type="object" string="Send By Email" class="oe_highlight" groups="om_hospital.group_hospital_manager"/>
+                    <button name="action_send_card" type="object" string="Send By Email" class="oe_highlight"
+                            groups="om_hospital.group_hospital_manager"/>
                 </header>
                 <sheet>
                     <div class="oe_button_box" name="expense_button_box">
@@ -51,7 +52,8 @@
                         </button>
                     </div>
                     <field name="image" widget="image" class="oe_avatar"/>
-                    <widget name="web_ribbon" title="Archived" bg_color="bg-danger" attrs="{'invisible': [('active', '=', True)]}"/>
+                    <widget name="web_ribbon" title="Archived" bg_color="bg-danger"
+                            attrs="{'invisible': [('active', '=', True)]}"/>
                     <field name="active" invisible="1"/>
                     <div class="oe_title">
                         <h1>
@@ -68,7 +70,8 @@
                         <group>
                             <field name="patient_gender"/>
                             <field name="age_group"/>
-                            <field name="doctor" options="{'no_create_edit': True, 'no_create': True, 'no_open': True}"/>
+                            <field name="doctor"
+                                   options="{'no_create_edit': True, 'no_create': True, 'no_open': True}"/>
                             <field name="doctor_gender"/>
                             <field name="pro"/>
                         </group>
