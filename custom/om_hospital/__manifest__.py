@@ -18,6 +18,7 @@
         'security/security.xml',
         'data/patient_seq.xml',
         'data/data.xml',
+        'data/cron_job_data.xml',
         'data/mail_template.xml',
         'views/patient.xml',
         'views/appointment.xml',
