@@ -12,6 +12,7 @@
                     </group>
                     <footer>
                         <button name="create_appointment" type="object" class="btn-primary" string="Create"/>
+                        <button name="get_data" type="object" string="Get Data"/>
                         <button string="Cancel" special="cancel" class="btn-secondary"/>
                     </footer>
                 </sheet>

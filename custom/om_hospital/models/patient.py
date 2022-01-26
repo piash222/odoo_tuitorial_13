@@ -120,7 +120,7 @@ class HospitalPatient(models.Model):
     @api.onchange('doctor')
     def set_doctor_gender(self):
         for rec in self:
-            self.doctor_gender = self.doctor.doctor_gender
+            rec.doctor_gender = rec.doctor.doctor_gender
 
     email = fields.Char(
         string='Email',
