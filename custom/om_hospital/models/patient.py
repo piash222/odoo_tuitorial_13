@@ -134,3 +134,17 @@ class HospitalPatient(models.Model):
     def action_send_card(self):
         template = self.env.ref("om_hospital.email_template_patient_hospital")
         template.send_mail(self.id, force_send=True)
+
+    patient_name_upper = fields.Char(
+        string='Patient Name Upper',
+        compute="_compute_upper_name",
+        inverse='_inverse_upper_name')
+
+    @api.depends('patient_name')
+    def _compute_upper_name(self):
+        for rec in self:
+            rec.patient_name_upper = rec.patient_name.upper() if rec.patient_name else False
+
+    def _inverse_upper_name(self):
+        for rec in self:
+            rec.patient_name = rec.patient_name_upper.capitalize() if rec.patient_name_upper else False

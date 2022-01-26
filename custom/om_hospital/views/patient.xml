@@ -57,12 +57,12 @@
                     <field name="active" invisible="1"/>
                     <div class="oe_title">
                         <h1>
-                            <field name="name_seq" placeholder="......"/>
+                            <field name="patient_name" placeholder="Patient Name"/>
                         </h1>
                     </div>
                     <group>
                         <group>
-                            <field name="patient_name"/>
+                            <field name="patient_name_upper"/>
                             <field name="name" groups="om_hospital.group_hospital_manager"/>
                             <field name="patient_age"/>
                             <field name="email"/>
