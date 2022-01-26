@@ -13,6 +13,12 @@ class HospitalAppointment(models.Model):
             vals_list['name'] = self.env['ir.sequence'].next_by_code('hospital.appointment.seq') or _('New')
         return super(HospitalAppointment, self).create(vals_list)
 
+    def write(self, values):
+        # Add code here
+        result = super(HospitalAppointment, self).write(values)
+        print("test write function")
+        return result
+
     name = fields.Char(
         string='Appointment ID',
         required=True,
