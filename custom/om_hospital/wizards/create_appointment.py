@@ -13,9 +13,9 @@ class CreateAppointment(models.TransientModel):
         required=True)
 
     def create_appointment(self):
-
         vals = {
-            'patient_id':self.patient_id.id,
+            'patient_id': self.patient_id.id,
             'appointment_date': self.appointment_date
         }
+        self.patient_id.message_post(body="appointment created successfully", subject="Appointment Creation")
         self.env['hospital.appointment'].create(vals)
