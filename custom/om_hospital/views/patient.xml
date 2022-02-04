@@ -62,7 +62,7 @@
                     </div>
                     <group>
                         <group>
-                            <field name="patient_name_upper"/>
+                            <field name="patient_name_upper" groups="base.group_no_one"/>
                             <field name="name" groups="om_hospital.group_hospital_manager"/>
                             <field name="patient_age"/>
                             <field name="email"/>
