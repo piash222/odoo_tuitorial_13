@@ -25,6 +25,7 @@
         'views/doctors.xml',
         'wizards/create_appointment.xml',
         'reports/reports.xml',
+        'reports/sale_report_inherit.xml',
     ],
     'demo': [
 
