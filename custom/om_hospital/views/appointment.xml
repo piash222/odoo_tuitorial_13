@@ -14,6 +14,7 @@
                         <button name="action_done" type="object" string="Done" states="confirm" class="oe_highlight"/>
                         <button name="action_cancel" type="object" string="Cancel" states="draft,confirm"
                                 class="oe_highlight"/>
+                        <button name="delete_lines" type="object" string="Delete" class="oe_highlight"/>
                         <field name="state" widget="statusbar" statusbar_visible="draft,confirm,done"
                                statusbar_colors="{'draft':'yellow'}"/>
                     </header>

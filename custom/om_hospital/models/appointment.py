@@ -87,6 +87,10 @@ class HospitalAppointment(models.Model):
         string='Appointment_lines',
         required=False)
 
+    def delete_lines(self):
+        for rec in self:
+            rec.appointment_lines = [(5, 0, 0)]
+
 
 class HospitalAppointmentLines(models.Model):
     _name = 'hospital.appointment.lines'
