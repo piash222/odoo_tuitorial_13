@@ -19,11 +19,10 @@
         </record>
 
         <act_window id="action_sale_confirm"
-            multi="True"
-            key2="client_action_multi" name="Confirm Quotation"
+            name="Confirm Quotation"
             view_id="sale_order_confirm_view"
-            res_model="sale.order.confirm" src_model="sale.order"
-            view_mode="form" target="new" view_type="form" />
+            res_model="sale.order.confirm" binding_model="sale.order"
+            view_mode="form" target="new"/>
 
         <record id="sale_order_cancel_view" model="ir.ui.view">
             <field name="name">sale.order.confirm.form</field>
@@ -42,11 +41,10 @@
         </record>
 
         <act_window id="action_sale_cancel"
-            multi="True"
-            key2="client_action_multi" name="Cancel Sale/Quotation"
+            name="Cancel Sale/Quotation"
             view_id="sale_order_cancel_view"
-            res_model="sale.order.confirm" src_model="sale.order"
-            view_mode="form" target="new" view_type="form" />
+            res_model="sale.order.confirm" binding_model="sale.order"
+            view_mode="form" target="new"/>
 
     </data>
 </odoo>

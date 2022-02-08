@@ -10,7 +10,7 @@ class PurchaseOrderConfirm(models.TransientModel):
     _name = 'purchase.order.confirm'
     _description = "Wizard - Purchase Order Confirm/Cancel"
 
-    @api.multi
+
     def purchase_confirm(self):
         """filter the records of the state 'draft' and 'sent',
         and will confirm this and others will be skipped"""
@@ -20,7 +20,7 @@ class PurchaseOrderConfirm(models.TransientModel):
         for quotation in quotations_ids:
             quotation.button_confirm()
 
-    @api.multi
+
     def purchase_cancel(self):
         quotations = self._context.get('active_ids')
         quotations_ids = self.env['purchase.order'].browse(quotations)

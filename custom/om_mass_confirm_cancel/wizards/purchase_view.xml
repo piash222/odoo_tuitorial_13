@@ -19,11 +19,10 @@
         </record>
 
         <act_window id="action_purchase_confirm"
-            multi="True"
-            key2="client_action_multi" name="Confirm RFQ"
+            name="Confirm RFQ"
             view_id="purchase_order_confirm_view"
-            res_model="purchase.order.confirm" src_model="purchase.order"
-            view_mode="form" target="new" view_type="form" />
+            res_model="purchase.order.confirm" binding_model="purchase.order"
+            view_mode="form" target="new"/>
 
         <record id="purchase_order_cancel_view" model="ir.ui.view">
             <field name="name">purchase.order.confirm.form</field>
@@ -42,11 +41,10 @@
         </record>
 
         <act_window id="action_purchase_cancel"
-            multi="True"
-            key2="client_action_multi" name="Cancel RFQ"
+            name="Cancel RFQ"
             view_id="purchase_order_cancel_view"
-            res_model="purchase.order.confirm" src_model="purchase.order"
-            view_mode="form" target="new" view_type="form" />
+            res_model="purchase.order.confirm" binding_model="purchase.order"
+            view_mode="form" target="new" />
 
 
     </data>
