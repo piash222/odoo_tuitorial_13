@@ -12,6 +12,7 @@
         'mail',
         'sale',
         'report_xlsx',
+        'sale_stock',
     ],
     'data': [
         'security/ir.model.access.csv',
