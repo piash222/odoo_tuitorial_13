@@ -91,6 +91,28 @@ class HospitalAppointment(models.Model):
         for rec in self:
             rec.appointment_lines = [(5, 0, 0)]
 
+    partner_id = fields.Many2one(
+        comodel_name='res.partner',
+        string='Partner Id',
+        required=False)
+
+    # domain using onchange method
+
+    # @api.onchange('partner_id')
+    # def _onchange_partner_id(self):
+    #     for rec in self:
+    #         rec.order_id = None
+    #         return {
+    #             'domain':
+    #                 {'order_id': [('partner_id', '=', rec.partner_id.id)]}
+    #         }
+
+    # domain using field domain
+    order_id = fields.Many2one(
+        comodel_name='sale.order',
+        string='Order Id',
+        required=False, domain="[('partner_id', '=', partner_id)]")
+
 
 class HospitalAppointmentLines(models.Model):
     _name = 'hospital.appointment.lines'
