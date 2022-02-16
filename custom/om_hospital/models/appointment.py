@@ -1,4 +1,5 @@
 from odoo import models, fields, api, _
+import pytz
 
 
 class HospitalAppointment(models.Model):
@@ -39,7 +40,7 @@ class HospitalAppointment(models.Model):
         string='Age',
         related='patient_id.patient_age',
         required=False)
-    appointment_date = fields.Date(
+    appointment_date = fields.Datetime(
         string='Appointment Date',
         required=True)
 
@@ -89,6 +90,11 @@ class HospitalAppointment(models.Model):
 
     def delete_lines(self):
         for rec in self:
+            print("Time in UTC,", rec.appointment_date)
+            user_tz = pytz.timezone(self.env.context.get('tz') or self.env.user.tz)
+            print(user_tz, type(user_tz))
+            time_local = pytz.utc.localize(rec.appointment_date).astimezone(user_tz)
+            print(time_local)
             rec.appointment_lines = [(5, 0, 0)]
 
     partner_id = fields.Many2one(
