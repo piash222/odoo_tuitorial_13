@@ -67,6 +67,7 @@ class HospitalPatient(models.Model):
                    ('fe_male', 'Female'), ],
         required=False)
 
+    # must to give api depend if store=True for the field, otherwise compute won't work
     @api.depends('patient_age')
     def set_age_group(self):
         for rec in self:
@@ -79,7 +80,7 @@ class HospitalPatient(models.Model):
         string='Age Group',
         selection=[('major', 'Major'),
                    ('minor', 'Minor'), ],
-        required=False, compute='set_age_group')
+        required=False, compute='set_age_group', store=True)
 
     appointment_count = fields.Integer(
         string='Appointment count',
