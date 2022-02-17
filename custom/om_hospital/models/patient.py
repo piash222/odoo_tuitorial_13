@@ -151,3 +151,6 @@ class HospitalPatient(models.Model):
 
     def cron_method(self):
         print("Executing cron job")
+
+    def print_report(self):
+        return self.env.ref("om_hospital.report_patient").report_action(self)
