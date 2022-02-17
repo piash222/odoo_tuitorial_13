@@ -88,6 +88,13 @@ class HospitalAppointment(models.Model):
         string='Appointment_lines',
         required=False)
 
+    @api.model
+    def default_get(self, fields_list):
+        res = super(HospitalAppointment, self).default_get(fields_list)
+        res['patient_id'] = 2
+        res['notes'] = "Default note from default get function"
+        return res
+
     def delete_lines(self):
         for rec in self:
             print("Time in UTC,", rec.appointment_date)
