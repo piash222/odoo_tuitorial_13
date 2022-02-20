@@ -13,6 +13,7 @@
         'sale',
         'report_xlsx',
         'sale_stock',
+        'website'
     ],
     'data': [
         'security/ir.model.access.csv',
@@ -25,6 +26,7 @@
         'views/appointment.xml',
         'views/doctors.xml',
         'wizards/create_appointment.xml',
+        'views/template.xml',
         'reports/reports.xml',
         'reports/sale_report_inherit.xml',
     ],

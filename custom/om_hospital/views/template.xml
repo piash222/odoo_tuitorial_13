@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="patient_page" name="Hospital Patient">
+        <t t-call="website.layout">
+            <div class="container">
+
+                <h2>Patient List</h2>
+
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                        </tr>
+                    </thead>
+                    <tbody t-foreach="patients" t-as="patient">
+                        <tr>
+                            <td>
+
+                                <span t-field="patient.patient_name"></span>
+                            </td>
+                        </tr>
+                    </tbody>
+
+                </table>
+
+<!--                <t t-foreach="patients" t-as="patient">-->
+<!--                    <h1 t-field="patient.patient_name"></h1>-->
+<!--                </t>-->
+            </div>
+        </t>
+    </template>
+
+
+</odoo>
