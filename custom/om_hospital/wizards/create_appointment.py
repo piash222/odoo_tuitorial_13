@@ -31,3 +31,21 @@ class CreateAppointment(models.TransientModel):
 
     def delete_patient(self):
         self.patient_id.unlink()
+
+    def patient_print(self):
+        # print('read', self.read())
+        # print('patient_id', self.patient_id)
+        # print('appointment_date', self.appointment_date)
+        data = {
+            'model': 'hospital.appointment',
+            'form': self.read()[0]
+        }
+        # if data['form']['patient_id'][0]:
+        #     selected_patient = data['form']['patient_id'][0]
+        #     appointments = self.env['hospital.appointment'].search([('patient_id', '=', selected_patient)])
+        # else:
+        #     appointments = self.env['hospital.appointment'].search([])
+        # data['docss'] = appointments
+        # print(appointments)
+        # print('data', data)
+        return self.env.ref('om_hospital.report_appointment').report_action(self, data=data)

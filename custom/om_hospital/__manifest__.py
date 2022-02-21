@@ -29,6 +29,7 @@
         'views/template.xml',
         'reports/reports.xml',
         'reports/sale_report_inherit.xml',
+        'reports/appointment.xml'
     ],
     'demo': [
 

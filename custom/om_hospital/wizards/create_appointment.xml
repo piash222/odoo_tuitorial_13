@@ -11,6 +11,7 @@
                         <field name="appointment_date"/>
                     </group>
                     <footer>
+                        <button name="patient_print" type="object" string="Print" class="btn-success"/>
                         <button name="create_appointment" type="object" class="btn-primary" string="Create"/>
                         <button name="get_data" type="object" string="Get Data"/>
                         <button name="delete_patient" type="object" string="Delete Patient" class="btn-outline-info"/>
