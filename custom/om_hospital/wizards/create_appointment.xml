@@ -30,5 +30,5 @@
     </record>
 
     <!-- This Menu Item must have a parent and an action -->
-    <menuitem id="create_appointment_menu" name="Create Appointment" parent="hospital_root" action="create_appointment_wizard_action" sequence="100"/>
+<!--    <menuitem id="create_appointment_menu" name="Create Appointment" parent="hospital_root" action="create_appointment_wizard_action" sequence="100"/>-->
 </odoo>

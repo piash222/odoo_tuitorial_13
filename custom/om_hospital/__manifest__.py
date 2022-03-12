@@ -21,16 +21,16 @@
         'data/patient_seq.xml',
         'data/data.xml',
         'data/cron_job_data.xml',
-        'data/mail_template.xml',
+        'wizards/create_appointment.xml',
         'views/patient.xml',
         'views/appointment.xml',
         'views/doctors.xml',
-        'wizards/create_appointment.xml',
         'views/template.xml',
         'views/settings.xml',
         'reports/reports.xml',
         'reports/sale_report_inherit.xml',
-        'reports/appointment.xml'
+        'reports/appointment.xml',
+        'data/mail_template.xml',
     ],
     'demo': [
 
