@@ -10,7 +10,7 @@
             <field name="arch" type="xml">
                 <xpath expr="//div[hasclass('settings')]" position="inside">
                     <div class="app_settings_block" data-string="Hospital" string="Hospital"
-                         data-key="Hospital">
+                         data-key="om_hospital">
                         <h2>Hospital Management</h2>
                         <div class="row mt16 o_settings_container">
                             <div class="o_setting_left_pane">
