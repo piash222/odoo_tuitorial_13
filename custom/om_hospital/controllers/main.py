@@ -29,7 +29,7 @@ class Hospital(http.Controller):
         }
         return data
 
-    @http.route("/create_patients",type='json', auth='user')
+    @http.route("/create_patients", type='json', auth='user')
     def create_patients(self, **rec):
         if request.jsonrequest:
             print("rec", rec)
@@ -40,3 +40,16 @@ class Hospital(http.Controller):
                 new_patient = request.env['hospital.patient'].sudo().create(vals)
                 args = {"success": True, "ID": new_patient.id}
             return args
+
+    # row >> json >> {"jsonrpc": "2.0", "params": {"id": 2, "email": "test@mail.com"}}
+
+    @http.route("/update_patient", type='json', auth='user')
+    def update_patient(self, **rec):
+        if request.jsonrequest:
+            print("rec", rec)
+        if rec["id"]:
+            patient = request.env["hospital.patient"].sudo().search([("id", "=", rec["id"])])
+            if patient:
+                patient.sudo().write(rec)
+            args = {"success": True, "ID": patient.id, "message": "patient updated"}
+        return args
