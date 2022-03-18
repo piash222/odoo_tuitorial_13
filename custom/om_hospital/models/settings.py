@@ -5,6 +5,11 @@ class HospitalSettings(models.TransientModel):
     _inherit = 'res.config.settings'
 
     note = fields.Char(string="Default Note")
+    # to download a module from settings
+    # name should be module_technical_name_of_the_module
+    module_crm = fields.Boolean(
+        string='CRM',
+        required=False)
 
     def set_values(self):
         res = super(HospitalSettings, self).set_values()
