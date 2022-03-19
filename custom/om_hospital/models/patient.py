@@ -47,7 +47,7 @@ class HospitalPatient(models.Model):
     patient_age = fields.Integer(
         string='Age',
         tracking=True,
-        required=False, )
+        required=False, group_operator=False)
 
     notes = fields.Text(
         string="Notes",
