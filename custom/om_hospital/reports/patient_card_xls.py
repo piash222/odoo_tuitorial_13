@@ -10,5 +10,7 @@ class PatientCardXlsx(models.AbstractModel):
         sheet = workbook.add_worksheet("Patient card")
         format1 = workbook.add_format({'font_size': 14, 'align': 'vcenter', 'bold': True})
         format2 = workbook.add_format({'font_size': 10, 'align': 'vcenter'})
+        sheet.set_column(2, 2, 20)
+        sheet.set_column(3, 3, 30)
         sheet.write(2, 2, 'name', format1)
         sheet.write(2, 3, objs.patient_name, format2)
